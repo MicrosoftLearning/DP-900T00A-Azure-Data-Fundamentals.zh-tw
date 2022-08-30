@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: d886b438a93762235ecd051230f873dae1b674ce
-ms.sourcegitcommit: 1117342052bce0bbd5a703bd1f763862b9129807
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "140682435"
----
 # <a name="dp-900-trainer-lab-mapping"></a>DP-900 講師實驗室對應
 
 「DP-900：Microsoft Azure 資料基礎知識」這門課程有套指定用於導學型訓練的實驗。 
