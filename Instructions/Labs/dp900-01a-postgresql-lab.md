@@ -47,6 +47,6 @@ lab:
 
     ![Azure 入口網站的螢幕擷取畫面，其中顯示適用於 PostgreSQL 的 Azure 資料庫頁面。](images/postgresql-portal.png)
 
-1. 檢閱管理適用於 PostreSQL 的 Azure 資料庫資源的選項。
+1. 檢閱管理適用於 PostgreSQL 的 Azure 資料庫資源的選項。
 
-> **提示**：如果您已完成探索適用於 PostreSQL 的 Azure Database，則可刪除您在此練習中建立的資源群組。
+> **提示**：如果您已完成探索適用於 PostgreSQL 的 Azure 資料庫，則可刪除您在此練習中建立的資源群組。
