@@ -1,16 +1,16 @@
 ---
 lab:
-  title: 使用 Azure 儲存體探索 Azure 中的非關聯式資料
+  title: 探索Azure 儲存體
   module: Explore Azure Storage for non-relational data
 ---
 
-# <a name="explore-non-relational-data-in-azure-with-azure-storage"></a>使用 Azure 儲存體探索 Azure 中的非關聯式資料
+# <a name="explore-azure-storage"></a>探索Azure 儲存體
 
 在此練習中，您必須在自己的 Azure 訂閱中佈建 Azure 儲存體帳戶，並探索使用該帳戶儲存資料的各種方法。
 
 此實驗室需要大約 **15** 分鐘才能完成。
 
-## <a name="before-you-start"></a>開始之前
+## <a name="before-you-start"></a>在您開始使用 Intune 之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
@@ -21,8 +21,8 @@ lab:
 1. 如果您尚未這麼做，請登入 [Azure 入口網站](https://portal.azure.com?azure-portal=true)。
 1. On the Azure portal home page, select <bpt id="p1">**</bpt>&amp;#65291; Create a resource<ept id="p1">**</ept> from the upper left-hand corner and search for <bpt id="p2">*</bpt>Storage account<ept id="p2">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Storage account<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
 1. 在 [建立儲存體帳戶] 頁面上，輸入下列值：
-    - <bpt id="p1">**</bpt>Subscription<ept id="p1">**</ept>: If you're using a sandbox, select <bpt id="p2">*</bpt>Concierge Subscription<ept id="p2">*</ept>. Otherwise, select your Azure subscription.
-    - **資源群組**：若您使用沙箱，請選取現有的資源群組 (名稱類似 *learn-xxxx...* )。否則，請使用您選擇的名稱建立新的資源群組。
+    - 訂用帳戶：選取 Azure 訂用帳戶。
+    - **資源群組**：以您選擇的名稱建立新的資源群組。
     - **儲存體帳戶名稱**：使用小寫字母和數字輸入儲存體帳戶的唯一名稱。
     - **區域**：選取任何可用的位置。
     - **效能**：[標準]
@@ -48,7 +48,7 @@ lab:
 1. 在儲存體瀏覽器頁面中，選取 [Blob 容器]，並確認您的 [資料] 容器已列出。
 1. 選取 [資料] 容器，目前沒有任何內容。
 1. 選取 [&#65291; 新增目錄] 並瀏覽資料夾的相關資訊，然後建立名為**產品**的新目錄。
-1. 在儲存體總管中，確認目前的檢視顯示剛建立的 [產品] 資料夾的內容 - 觀察頁面頂端的「階層連結」是否反映 **Blob 容器 > 資料 > 產品**路徑。
+1. 在儲存體瀏覽器中，確認目前的檢視顯示了剛建立的 [產品] 資料夾內容 - 觀察頁面頂端的「階層連結」是否反映出 **Blob 容器 > 資料 > 產品**的路徑。
 1. 在階層連結中，選取 [資料] 以切換至 [資料] 容器，注意其中<u>沒有</u>名為 [產品] 的資料夾。
 
     Folders in blob storage are virtual, and only exist as part of the path of a blob. Since the <bpt id="p1">**</bpt>products<ept id="p1">**</ept> folder contained no blobs, it isn't really there!
@@ -68,11 +68,11 @@ Azure Data Lake Store Gen2 support enables you to use hierarchical folders to or
 
 1. 從 `https://aka.ms/product2.json` 下載 [product2.json](https://aka.ms/product2.json?azure-portal=true) JSON 檔案，並儲存在先前下載 **product1.json** 的同一個資料夾中，您稍後會將該檔案上傳至 Blob 儲存體。
 1. 在儲存體容器的 Azure 入口網站頁面左側，向下捲動至 [設定] 區段，然後選取 [Data Lake Gen2 升級]。
-1. 在 Azure 入口網站首頁上，選取左上角的 [&#65291; 建立資源]，並搜尋*儲存體帳戶*。
+1. In the ****Data Lake Gen2 upgrade**** page, expand and complete each step to upgrade your storage account to enable hierarchical namespace and support Azure Data Lake Storage Gen 2. This may take some time.
 1. 升級完成後，在左側窗格的頂端區段中，選取 [儲存體瀏覽器]，然後返回 [資料] Blob 容器的根目錄，其中仍包含 [產品_資料] 資料夾。
 1. 選取 [產品_資料] 資料夾，並確認其中仍包含您先前上傳的 **product1.json** 檔案。
 1. 使用 [&#10514; 上傳] 按鈕開啟 [上傳 Blob] 面板。
-1. 然後在產生的 [儲存體帳戶] 頁面中，選取 [建立]。
+1. 在 Azure 入口網站首頁上，選取左上角的 [&#65291; 建立資源]，並搜尋*儲存體帳戶*。
 1. 關閉 [上傳 Blob] 面板 (如果仍然開啟)，並確認 [產品_資料] 資料夾現已包含 **product2.json** 檔案。
 1. 在左側的 [資料儲存體] 區段中，選取 [容器]。
 1. 開啟 [資料] 容器，並確認您建立的 [產品_資料] 資料夾已列出。
@@ -86,7 +86,7 @@ Azure 檔案儲存體提供建立雲端式檔案共用的方法。
 1. 在儲存體容器的 Azure 入口網站頁面上，選取位於左側 [資料儲存體] 區段中的 [檔案共用]。
 1. 在 [檔案共用] 頁面中，選取 [&#65291 檔案共用]，然後使用 [交易最佳化] 層級新增名為**檔案**的新檔案共用。
 1. 在 [檔案共用] 中，開啟新的 [檔案] 共用。
-1. At the top of the page, select <bpt id="p1">**</bpt>Connect<ept id="p1">**</ept>. Then in the <bpt id="p1">**</bpt>Connect<ept id="p1">**</ept> pane, note that there are tabs for common operating systems (Windows, Linux, and macOS) that contain scripts you can run to connect to the shared folder from a client computer.
+1. 然後在產生的 [儲存體帳戶] 頁面中，選取 [建立]。
 1. 依序關閉 [連線] 窗格和 [檔案] 頁面，以返回 Azure 儲存體帳戶的 [檔案共用] 頁面。
 
 ## <a name="explore-azure-tables"></a>探索 Azure 資料表

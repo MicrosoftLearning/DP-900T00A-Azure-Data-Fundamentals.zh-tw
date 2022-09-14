@@ -1,9 +1,9 @@
 ---
 lab:
-  title: 使用 Azure Cosmos DB 探索 Azure 中的非關聯式資料
+  title: 探索 Azure Cosmos DB
   module: Explore fundamentals of Azure Cosmos DB
 ---
-# <a name="explore-non-relational-data-in-azure-with-azure-cosmos-db"></a>使用 Azure Cosmos DB 探索 Azure 中的非關聯式資料
+# <a name="explore-azure-cosmos-db"></a>探索 Azure Cosmos DB
 
 在此練習中，您必須在自己的 Azure 訂閱中佈建 Azure Cosmos DB 資料庫，並探索各種使用該資料庫儲存非關聯式資料的方法。
 
