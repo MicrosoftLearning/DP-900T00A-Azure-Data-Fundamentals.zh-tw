@@ -20,9 +20,9 @@ lab:
 
 1. In the Azure portal, select <bpt id="p1">**</bpt>&amp;#65291; Create a resource<ept id="p1">**</ept> from the upper left-hand corner and search for <bpt id="p2">*</bpt>Azure Database for MySQL<ept id="p2">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Azure Database for MySQL<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
 
-1. Review the Azure Database for MySQL options that are available. Then for <bpt id="p1">**</bpt>Resource type<ept id="p1">**</ept>, select <bpt id="p2">**</bpt>Flexible Server<ept id="p2">**</ept> and select <bpt id="p3">**</bpt>Create<ept id="p3">**</ept>.
+1. 檢閱可用的適用於 MySQL 的 Azure 資料庫選項，保留 [資源類型]，選取 [建立]。
 
-    ![適用於 MySQL 的 Azure 資料庫部署選項螢幕擷取畫面](images/mysql-options.png)
+    ![螢幕擷取畫面：適用於 MySQL 的 Azure 資料庫部署選項](images/mysql-options.png)
 
 1. 在 [建立 SQL Database] 頁面上輸入下列值：
     - 訂用帳戶：選取 Azure 訂用帳戶。
