@@ -1,15 +1,16 @@
-﻿# DP-900 講師實驗室對應
+# <a name="dp-900-trainer-lab-mapping"></a>DP-900 講師實驗室對應
 
 「DP-900：Microsoft Azure 資料基礎知識」這門課程有套指定用於導學型訓練的實驗。 
 
-> 附注：講師可以要求學生在課餘時間透過 Learn 學習路徑中的練習來完成一或多個實驗 (https://docs.microsoft.com/zh-tw/users/23110622/collections/0kjyh8rn5gdrjj)。 
+> 注意：講師可以要求學生在課餘時間透過相關 Learn 學習路徑 (https://docs.microsoft.com/users/23110622/collections/0kjyh8rn5gdrjj) 中的練習完成一或多個實驗。 
 
-## 對應各實驗室的 DP-900 模組
+## <a name="dp-900-module-mapping-to-labs"></a>對應各實驗室的 DP-900 模組
 
-| DP-900 講師實驗室 | 主題 | Markdown 檔案 |
+| 模組 | 實驗室 | Markdown 檔案 |
 | --- | --- | --- |
-| 01：DP-900 模組 02 | 佈建 Azure 關聯式資料庫服務 | [01-Provision-Azure-relational-database-services.md](https://github.com/MicrosoftLearning/DP-900TW-Microsoft-Azure-Data-Fundamentals/tree/master/Instructions/01-Provision-Azure-relational-database-services.md) |
-| 02：DP-900 模組 02 | 學習如何在 Azure Machine Learning 中使用 SQL 查詢 Azure SQL Database | [https://github.com/MicrosoftLearning/DP-900TW-Microsoft-Azure-Data-Fundamentals/tree/master/Instructions/02-Use-SQL-to-query-Azure-SQL-Database.md) |
-| 03：DP-900 模組 03 | 佈建非關聯式 Azure 資料服務  | [03-Provision-non-relational-Azure-data-services.md](https://github.com/MicrosoftLearning/DP-900TW-Microsoft-Azure-Data-Fundamentals/tree/master/Instructions/03-Provision-non-relational-Azure-data-services.md) |
-| 04：DP-900 模組 03 | 在非關聯式資料存放區中上傳、下載和查詢資料 | [04-Upload-download-and-query-data-in-a-non-relational-data-store.md](https://github.com/MicrosoftLearning/DP-900TW-Microsoft-Azure-Data-Fundamentals/tree/master/Instructions/04-Upload-download-and-query-data-in-a-non-relational-data-store.md) |
-
+| 02-探索 Azure 中的關聯式資料 | 探索 Azure SQL Database | [dp900-01-sql-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-01-sql-lab.md) |
+| 03-探索 Azure 中的非關聯式資料 | 探索 Azure 儲存體 | [dp900-02-storage-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-02-storage-lab.md) |
+| 03-探索 Azure 中的非關聯式資料| 探索 Azure Cosmos DB  | [dp900-03-cosmos-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-03-cosmos-lab.md) |
+| 04-探索 Azure 中的資料分析 | 探索 Azure Synapse Analytics | [dp900-04-synapse-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-04-synapse-lab.md) |
+| 04-探索 Azure 中的資料分析 | 探索 Azure 串流分析 | [dp900-05-stream-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-05-stream-lab.md) |
+| 04-探索 Azure 中的資料分析 | 使用 Power BI 視覺化資料 | [dp900-pbi-06-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-pbi-06-lab.md) |
