@@ -10,7 +10,7 @@ lab:
 
 此實驗室需要大約 **15** 分鐘才能完成。
 
-## <a name="before-you-start"></a>在您開始使用 Intune 之前
+## <a name="before-you-start"></a>開始之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
@@ -20,7 +20,7 @@ lab:
 
 1. 在 [[Azure 入口網站]](https://portal.azure.com?azure-portal=true) 開啟 Azure 入口網站，使用與 Azure 訂用帳戶相關聯的認證登入。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Ensure you are working in the directory containing your own subscription - indicated at the top right under your user ID. If not, select the user icon and switch directory.
+    >                 **注意**：請確定您是在包含專屬訂用帳戶的目錄中工作 - 請見畫面右上角，您的使用者識別碼下方。 否則，請選取使用者圖示並切換目錄。
 
 2. 在 Azure 入口網站的 [首頁] 頁面上，使用 [&#65291; 建立資源] 圖示來建立新的資源。
 3. 搜尋 *Azure Synapse Analytics*，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
@@ -33,7 +33,7 @@ lab:
         - **帳戶名稱**：*建立具有唯一名稱的新帳戶，例如「datalake<your_name>」* 。
         - **檔案系統名稱**：*建立具有唯一名稱的新檔案系統，例如「fs<your_name>」* 。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: A Synapse Analytics workspace requires two resource groups in your Azure subscription; one for resources you explicitly create, and another for managed resources used by the service. It also requires a Data Lake storage account in which to store data, scripts, and other artifacts.
+    >                 **注意**：Synapse Analytics 工作區需要 Azure 訂用帳戶中的兩個資源群組：一個用於您明確建立的資源，另一個用於服務所使用的受控資源。 其還需要 Data Lake Storage 帳戶來儲存資料、指令碼和其他成品。
 
 4. 輸入這些詳細資料後，請選取 [檢閱 + 建立]，然後選取 [建立] 以建立工作區。
 5. 等候建立工作區 - 這可能需要五分鐘的時間。
@@ -67,7 +67,7 @@ lab:
 
 ## <a name="delete-azure-resources"></a>刪除 Azure 資源
 
-> <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you intend to complete other exercises that use Azure Synapse Analytics, you can skip this section. Otherwise, follow the steps below to avoid unnecessary Azure costs.
+>                 **注意**：如果您想要完成使用 Azure Synapse Analytics 的其他練習，您可以略過本節。 否則，請遵循下列步驟來避免不必要的 Azure 成本。
 
 1. 關閉 Synapse Studio 瀏覽器索引標籤而不儲存任何變更，並回到 Azure 入口網站。
 1. 在 Azure 入口網站的 [首頁] 上，選取 [資源群組]。

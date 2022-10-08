@@ -16,7 +16,7 @@ lab:
 
 ## <a name="provision-an-azure-sql-database-resource"></a>佈建 Azure SQL Database 資源
 
-1. In the <bpt id="p1">[</bpt>Azure portal<ept id="p1">](https://portal.azure.com?azure-portal=true)</ept>, select <bpt id="p2">**</bpt>&amp;#65291; Create a resource<ept id="p2">**</ept> from the upper left-hand corner and search for <bpt id="p3">*</bpt>Azure SQL<ept id="p3">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Azure SQL<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 [Azure 入口網站](https://portal.azure.com?azure-portal=true)中，選取左上角的 [&#65291; 建立資源]，並搜尋 *Azure SQL*。 然後在產生的 [Azure SQL] 頁面中，選取 [建立]。
 
 1. 檢閱可用的 Azure SQL 選項，然後在 [SQL資料庫] 圖格中，確定已選取 [單一資料庫]，然後選取 [建立]。
 
@@ -26,12 +26,12 @@ lab:
     - 訂用帳戶：選取 Azure 訂用帳戶。
     - **資源群組**：以您選擇的名稱建立新的資源群組。
     -               [資料庫名稱]：AdventureWorks
-    - <bpt id="p1">**</bpt>Server<ept id="p1">**</ept>:  Select <bpt id="p2">**</bpt>Create new<ept id="p2">**</ept> and create a new server with a unique name in any available location. Use <bpt id="p1">**</bpt>SQL authentication<ept id="p1">**</ept> and specify your name as the server admin login and a suitably complex password (remember the password - you'll need it later!)
+    -                 **伺服器**：選取 [新建]，並在任何可用位置中建立具有唯一名稱的新伺服器。 使用 **SQL 驗證**，並將名稱指定為伺服器管理員登入，並設下合適複雜度的密碼 (請務必記住密碼，稍後會需要用到！)
     -               [想使用 SQL 彈性集區嗎？]：[否]
     -               [計算 + 儲存體]：保持不變
     -               [備份儲存體備援]：[本地異地備援備份儲存體]
 
-1. On the <bpt id="p1">**</bpt>Create SQL Database<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Next :Networking &gt;<ept id="p2">**</ept>, and on the <bpt id="p3">**</bpt>Networking<ept id="p3">**</ept> page, in the <bpt id="p4">**</bpt>Network connectivity<ept id="p4">**</ept> section, select <bpt id="p5">**</bpt>Public endpoint<ept id="p5">**</ept>. Then select <bpt id="p1">**</bpt>Yes<ept id="p1">**</ept> for both options in the <bpt id="p2">**</bpt>Firewall rules<ept id="p2">**</ept> section to allow access to your database server from Azure services and your current client IP address.
+1. 在 [建立 SQL Database] 頁面上，選取 [下一步：網路 >]，然後在 [網路] 頁面上的 [網路連線能力] 區段中，選取 [公用端點]。 然後，針對**防火牆規則**區段中的兩個選項選取 [是]，允許從 Azure 服務和您目前的用戶端 IP 位址存取資料庫伺服器。
 
 1. 選取 [下一步：安全性 >]，並將 [啟用適用於 SQL 的 Microsoft Defender] 選項設定為 [暫時不要]。
 
@@ -39,7 +39,7 @@ lab:
 
 1. 選取 [檢閱 + 建立]，然後選取 [建立] 以建立您的 Azure SQL 資料庫。
 
-1. Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
+1. 等候部署完成。 然後前往已部署的資源，應會如下所示：
 
     ![Azure 入口網站的螢幕擷取畫面，其中顯示 SQL Database 頁面。](images//sql-database-portal.png)
 
