@@ -10,7 +10,7 @@ lab:
 
 此實驗室需要大約 **15** 分鐘才能完成。
 
-## <a name="before-you-start"></a>在您開始使用 Intune 之前
+## <a name="before-you-start"></a>開始之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
@@ -18,7 +18,7 @@ lab:
 
 1. 前往 [Azure 入口網站](https://portal.azure.com)，使用您的 Azure 訂閱登入資訊來登入帳戶。
 
-1. Use the <bpt id="p1">**</bpt>[<ph id="ph1">\&gt;</ph>_]<ept id="p1">**</ept> button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a <bpt id="p2">***</bpt>Bash<ept id="p2">***</ept> environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. 使用頁面頂端搜尋列右側的 [\>_] 按鈕，在 Azure 入口網站中建立新的 Cloud Shell，待畫面上出現提示後，選取 ***Bash*** 環境並建立儲存體。 Cloud Shell 會在 Azure 入口網站底部的窗格顯示命令列介面，如下所示：
 
     ![顯示 Cloud Shell 窗格的 Azure 入口網站](./images/cloud-shell.png)
 
@@ -50,7 +50,7 @@ lab:
 
 ## <a name="explore-the-azure-resources"></a>探索 Azure 資源
 
-1. In the <bpt id="p1">[</bpt>Azure portal<ept id="p1">](https://portal.azure.com?azure-portal=true)</ept>, on the home page, select <bpt id="p2">**</bpt>Resource groups<ept id="p2">**</ept> to see the resource groups in your subscription. This should include the <bpt id="p1">**</bpt>learn*xxxxxxxxxxxxxxxxx...<ept id="p1">**</ept>* resource group identified by the setup script.
+1. 在 [Azure 入口網站](https://portal.azure.com?azure-portal=true)的首頁上，選取 [資源群組] 以查看您訂用帳戶中的資源群組。 這應該包含安裝指令碼所識別的 **learn*xxxxxxxxxxxxxxxxx...** * 資源群組。
 2. 選取 **learn*xxxxxxxxxxxxxxxxx...** * 資源群組，並檢閱其包含的資源，其中應該包括：
     - 名為 **iothub*xxxxxxxxxxxxx*** 的 *IoT 中樞*，用來接收傳入的裝置資料。
     - 名為 **store*xxxxxxxxxxxx*** 的*儲存體帳戶*，將作為資料處理結果的寫入目的地。
@@ -61,7 +61,7 @@ lab:
     > **Note**：如果您使用 Learn 沙箱，資源群組也可能包含名為 **cloudshell*xxxxxxxx*** 的第二個*儲存體帳戶*，以供儲存您用來執行安裝指令碼的 Azure Cloud Shell 資料。
 
 3. 選取 **stream*xxxxxxxxxxxxx*** 串流分析作業，並檢視其 [概觀] 頁面上的資訊，並記下下列詳細資料：
-    - The job has one <bpt id="p1">*</bpt>input<ept id="p1">*</ept> named <bpt id="p2">**</bpt>iotinput<ept id="p2">**</ept>, and one <bpt id="p3">*</bpt>output<ept id="p3">*</ept> named <bpt id="p4">**</bpt>bloboutput<ept id="p4">**</ept>. These reference the IoT Hub and Storage account created by the setup script.
+    - 作業中會有一個名為 **iotinput** 的*輸入*，以及一個名為 **bloboutput** 的*輸出*。 這些資料會參考安裝指令碼所建立的 IoT 中樞和儲存體帳戶。
     - 作業具有*查詢*，其會從 **iotinput** 輸入讀取資料，並藉由計算每 10 秒所處理的訊息數目來加以彙總；將結果寫入到 **bloboutput** 輸出。
 
 ## <a name="use-the-resources-to-analyze-streaming-data"></a>使用資源來分析串流資料

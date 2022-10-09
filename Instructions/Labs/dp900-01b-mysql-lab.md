@@ -18,11 +18,11 @@ lab:
 
 在此練習中，需佈建適用於 MySQL 資源的 Azure 資料庫。
 
-1. In the Azure portal, select <bpt id="p1">**</bpt>&amp;#65291; Create a resource<ept id="p1">**</ept> from the upper left-hand corner and search for <bpt id="p2">*</bpt>Azure Database for MySQL<ept id="p2">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Azure Database for MySQL<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 Azure 入口網站中，選取左上角的 [&#65291; 建立資源]，並搜尋*適用於 MySQL 的 Azure 資料庫*。 然後在生成的 [適用於 MySQL 的 Azure 資料庫] 頁面中，選取 [建立]。
 
-1. 檢閱可用的適用於 MySQL 的 Azure 資料庫選項，保留 [資源類型]，選取 [建立]。
+1. 檢閱可用的適用於 MySQL 的 Azure 資料庫選項。 然後針對 [資源類型]，選取 [彈性伺服器]，再選取 [建立]。
 
-    ![螢幕擷取畫面：適用於 MySQL 的 Azure 資料庫部署選項](images/mysql-options.png)
+    ![適用於 MySQL 的 Azure 資料庫部署選項螢幕擷取畫面](images/mysql-options.png)
 
 1. 在 [建立 SQL Database] 頁面上輸入下列值：
     - 訂用帳戶：選取 Azure 訂用帳戶。
@@ -43,7 +43,7 @@ lab:
 
 1. 選取 [檢閱 + 建立]，然後選取 [建立] 以建立您的 Azure MySQL 資料庫。
 
-1. Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
+1. 等候部署完成。 然後前往已部署的資源，應會如下所示：
 
     ![螢幕擷取畫面：Azure 入口網站，顯示適用於 MySQL 的 Azure 資料庫頁面。](images/mysql-portal.png)
 

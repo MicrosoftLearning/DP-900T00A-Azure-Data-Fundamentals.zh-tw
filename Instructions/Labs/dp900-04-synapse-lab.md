@@ -20,7 +20,7 @@ lab:
 
 1. 在 [https://portal.azure.com](https://portal.azure.com?azure-portal=true) 開啟 Azure 入口網站，使用與 Azure 訂用帳戶相關聯的認證登入。
 
-    > <bpt id="p1">**</bpt>Tip<ept id="p1">**</ept>:  Ensure you are working in the directory containing your subscription - indicated at the top right under your user ID. If not, select the user icon and switch directory.
+    >                 **提示**：請確定位於您訂用帳戶所在的目錄，如右上角的使用者識別碼下方所示。 否則，請選取使用者圖示並切換目錄。
 
 2. 在 Azure 入口網站的 [首頁] 頁面上，使用 [&#65291; 建立資源] 圖示來建立新的資源。
 3. 搜尋 *Azure Synapse Analytics*，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
@@ -43,7 +43,7 @@ lab:
         - **帳戶名稱**：*建立具有唯一名稱的新帳戶，例如「datalake<your_name>」* 。
         - **檔案系統名稱**：*建立具有唯一名稱的新檔案系統，例如「fs<your_name>」* 。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: A Synapse Analytics workspace requires two resource groups in your Azure subscription; one for resources you explicitly create, and another for managed resources used by the service. It also requires a Data Lake storage account in which to store data, scripts, and other artifacts.
+    >                 **注意**：Synapse Analytics 工作區需要 Azure 訂用帳戶中的兩個資源群組：一個用於您明確建立的資源，另一個用於服務所使用的受控資源。 其還需要 Data Lake Storage 帳戶來儲存資料、指令碼和其他成品。
 
 4. 輸入這些詳細資料後，請選取 [檢閱 + 建立]，然後選取 [建立] 以建立工作區。
 5. 等候建立工作區 - 這可能需要五分鐘的時間。
@@ -57,11 +57,11 @@ lab:
 
 Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，用以從各種來源將資料轉送 (必要時還轉換) 至工作區來分析。
 
-1. 在 Synapse Studio 的 [首頁]，選取 [內嵌]，然後選擇 [內建複製工作]，以開啟**複製資料工具**。
+1. 在 Synapse Studio 的 [首頁] 頁面中，選取 [內嵌] 開啟 [資料複製工具] 工具。
 2. 在複製資料工具的 [屬性] 步驟中，確定已選取 [內建複製工作] 和 [立即執行一次]，然後按 [下一步 >]。
 3. 在 [來源] 步驟的 [資料集] 子步驟中，選取下列設定：
     - **來源類型**：全部
-    - **連線**：*建立新連線，並在出現的 **[連結服務]** 窗格中選取 **[檔案]** 索引標籤上的 **[HTTP]**。接著使用下列設定繼續進行，並建立資料檔案的連線：*
+    - **連線**：建立新連線，並在出現的 [新增連線] 窗格中選取 [檔案] 索引標籤上的 [HTTP]。接著使用下列設定繼續進行，並建立資料檔案的連線：
         - **名稱**：AdventureWorks 產品
         - **描述**：透過 HTTP 的產品清單
         - **透過整合執行階段連線**：AutoResolveIntegrationRuntime
@@ -91,7 +91,7 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，�
     - **複製行為**：無
     - **並行連線數上限**：保留空白
     - **區塊大小 (MB)**：保留空白
-9. On the <bpt id="p1">**</bpt>Target<ept id="p1">**</ept> step, in the <bpt id="p2">**</bpt>Configuration<ept id="p2">**</ept> substep, ensure that the following properties are selected. Then select <bpt id="p1">**</bpt>Next &gt;<ept id="p1">**</ept>:
+9. 在 [目標] 步驟的 [設定] 子步驟中，確定已選取下列屬性。 然後，選取 [下一步 >]：
     - **檔案格式**：DelimitedText
     - **資料行分隔符號**：逗號 (,)
     - **資料列分隔符號**：換行 (\n)
@@ -108,13 +108,13 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，�
 11. 在 [檢閱並完成] 步驟的 [檢閱] 子步驟上，閱讀摘要，然後按 [下一步 >]。
 12. 在 [部署] 步驟中，等候管線部署，然後按一下 [完成]。
 13. 在 Synapse Studio 中，選取 [監視] 頁面，然後在 [管線執行] 索引標籤中，等候 [複製產品] 管線的完成狀態為**成功** (您可以使用 [管線執行] 頁面上的 [&#8635; 重新整理] 按鈕來重新整理狀態)。
-14. On the <bpt id="p1">**</bpt>Data<ept id="p1">**</ept> page, select the <bpt id="p2">**</bpt>Linked<ept id="p2">**</ept> tab and expand the <bpt id="p3">**</bpt>Azure Data Lake Storage Gen 2<ept id="p3">**</ept> hierarchy until you see the file storage for your Synapse workspace. Then select the file storage to verify that a file named <bpt id="p1">**</bpt>products.csv<ept id="p1">**</ept> has been copied to this location, as shown here:
+14. 在 [資料] 頁面中選取 [已連結] 索引標籤，然後展開 [Azure Data Lake Storage Gen 2] 階層，直到看到 Synapse 工作區的檔案儲存體為止。 然後選取檔案儲存體，驗證名稱為 **products.csv** 的檔案已複製到此位置，如下所示：
 
     ![影像顯示 Synapse Studio 展開的 Azure Data Lake Storage Gen 2 階層，以及 Synapse 工作區的檔案儲存體](images/synapse-storage.png)
 
 ## <a name="use-a-sql-pool-to-analyze-data"></a>使用 SQL 集區分析資料
 
-Now that you've ingested some data into your workspace, you can use Synapse Analytics to query and analyze it. One of the most common ways to query data is to use SQL, and in Synapse Analytics you can use a <bpt id="p1">*</bpt>SQL pool<ept id="p1">*</ept> to run SQL code.
+將一些資料內嵌到工作區後，您即可使用 Synapse Analytics 來查詢與分析資料。 查詢資料的最常見方式之一是使用 SQL，而且在 Synapse Analytics 中，您可以使用「SQL 集區」來執行 SQL 程式碼。
 
 1. 在 Synapse Studio中，以滑鼠右鍵按一下 Synapse 工作區之檔案儲存體中的 **products.csv** 檔案，指向 [新增 SQL 指令碼]，然後選取 [選取前 100 個資料列]。
 2. 在開啟的 [SQL Script 1] (SQL 指令碼 1) 窗格中，檢閱已產生的 SQL 程式碼，就像這樣：
@@ -143,7 +143,7 @@ Now that you've ingested some data into your workspace, you can use Synapse Anal
     | 772 | Mountain-100 Silver, 42 | Mountain Bikes | 3399.9900 |
     | ... | ... | ... | ... |
 
-5. Note the results consist of four columns named C1, C2, C3, and C4; and that the first row in the results contains the names of the data fields. To fix this problem, add a HEADER_ROW = TRUE parameters to the OPENROWSET function as shown here (replacing <bpt id="p1">*</bpt>datalakexx<ept id="p1">*</ept> and <bpt id="p2">*</bpt>fsxx<ept id="p2">*</ept> with the names of your data lake storage account and file system), and then rerun the query:
+5. 請注意，結果中包含 C1、C2、C3 和 C4 這四個資料行，結果中的第一個資料列包含資料欄位的名稱。 若要解決此問題，請將 HEADER_ROW = TRUE 參數新增至 OPENROWSET 函式，如下所示 (將 datalakexx 和 fsxx 換成您的資料湖儲存體帳戶和檔案系統的名稱)，然後重新執行查詢：
 
     ```SQL
     SELECT
@@ -188,13 +188,13 @@ Now that you've ingested some data into your workspace, you can use Synapse Anal
     | Bike Racks | 1 |
     | ... | ... |
 
-8. In the <bpt id="p1">**</bpt>Properties<ept id="p1">**</ept> pane for <bpt id="p2">**</bpt>SQL Script 1<ept id="p2">**</ept>, change the <bpt id="p3">**</bpt>Name<ept id="p3">**</ept> to <bpt id="p4">**</bpt>Count Products by Category<ept id="p4">**</ept>. Then in the toolbar, select <bpt id="p1">**</bpt>Publish<ept id="p1">**</ept> to save the script.
+8. 在 [SQL Script 1] (SQL 指令碼 1) 的 [屬性] 窗格中，將 [名稱] 變更為 [Count Products by Category] (依類別計算產品)。 然後在工具列中，選取 [發佈] 以儲存指令碼。
 
 9. 關閉 [Count Products by Category] (依類別計算產品) 指令碼窗格。
 
 10. 在 Synapse Studio 中，選取 [開發] 頁面，注意您已在此儲存發佈的 [Count Products by Category] (依類別計算產品)。
 
-11. Select the <bpt id="p1">**</bpt>Count Products by Category<ept id="p1">**</ept> SQL script to reopen it. Then ensure that the script is connected to the <bpt id="p1">**</bpt>Built-in<ept id="p1">**</ept> SQL pool and run it to retrieve the product counts.
+11. 選取 [Count Products by Category] (依類別計算產品) SQL 指令碼以重新開啟。 然後，確定指令碼已連線到 [內建] SQL 集區，執行此指令碼以擷取產品計數。
 
 12. 在 [結果] 窗格中，選取 [圖表] 檢視，然後選取圖表的下列設定：
     - **圖表類型**：直條圖
@@ -212,7 +212,7 @@ Now that you've ingested some data into your workspace, you can use Synapse Anal
 
 ## <a name="use-a-spark-pool-to-analyze-data"></a>使用 Spark 集區來分析資料
 
-While SQL is a common language for querying structured datasets, many data analysts find languages like Python useful to explore and prepare data for analysis. In Azure Synapse Analytics, you can run Python (and other) code in a <bpt id="p1">*</bpt>Spark pool<ept id="p1">*</ept>; which uses a distributed data processing engine based on Apache Spark.
+雖然 SQL 是查詢結構化資料集的常用語言，但許多資料分析師發現 Python 之類的語言也很適合探索和準備要分析的資料。 在 Azure Synapse Analytics 中，您可以在「Spark 集區」中執行 Python (和其他) 程式碼，此集區使用以 Apache Spark 為基礎的分散式資料處理引擎。
 
 1. 在 Synapse Studio 中，選取 [管理] 頁面。
 2. 選取 [Apache Spark 集區] 索引標籤，然後使用 [&#65291; 新增] 圖示，建立具有下列設定的新 Spark 集區：
@@ -222,7 +222,7 @@ While SQL is a common language for querying structured datasets, many data analy
     - **自動調整**：已啟用
     - **節點數目**：3----3
 3. 檢閱並建立 Spark 集區，然後等候部署 (這可能需要幾分鐘)。
-4. When the Spark pool has been deployed, in Synapse Studio, on the <bpt id="p1">**</bpt>Data<ept id="p1">**</ept> page, browse to the file system for your Synapse workspace. Then right-click <bpt id="p1">**</bpt>products.csv<ept id="p1">**</ept>, point to <bpt id="p2">**</bpt>New notebook<ept id="p2">**</ept>, and select <bpt id="p3">**</bpt>Load to DataFrame<ept id="p3">**</ept>.
+4. Spark 集區部署好之後，在 Synapse Studio 的 [資料] 頁面中，瀏覽至您 Synapse 工作區的檔案系統。 然後以滑鼠右鍵按一下 ** products.csv**，指向 [新增筆記本]，然後選取 [載入 DataFrame 中]。
 5. 在開啟的 [Notebook 1] (筆記本 1) 窗格中，於 [附加至] 清單中選取先前建立的 [spark] Spark 集區，並確定 [語言] 已設定為 [PySpark (Python)]。
 6. (僅) 檢閱筆記本中第一個儲存格的程式碼，看起來就像這樣：
 
@@ -235,7 +235,7 @@ While SQL is a common language for querying structured datasets, many data analy
     display(df.limit(10))
     ```
 
-7.                  **提示**：請確定位於您訂用帳戶所在的目錄，如右上角的使用者識別碼下方所示。
+7.  選取程式碼儲存格左邊的 **&#9655; 執行** 圖示執行程式碼，並等候結果。 第一次執行筆記本中的儲存格時會啟動 Spark 集區，因此可能需要一分鐘左右才會傳回任何結果。
 
     > **注意**：如果因為 Python 核心尚無法使用而發生錯誤，請再次執行儲存格。
 
@@ -285,7 +285,7 @@ While SQL is a common language for querying structured datasets, many data analy
     | Wheels | 14 |
     | ... | ... |
 
-14. 否則，請選取使用者圖示並切換目錄。
+14. 在儲存格的結果輸出中，選取 [圖表] 檢視。 產生的圖表應像這樣：
 
     ![影像顯示類別計數圖表](images/bar-chart.png)
 

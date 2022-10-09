@@ -18,7 +18,7 @@ lab:
 
 在此練習中，需佈建適用於 PostgreSQL 資源的 Azure 資料庫。
 
-1. In the Azure portal, select <bpt id="p1">**</bpt>&amp;#65291; Create a resource<ept id="p1">**</ept> from the upper left-hand corner and search for <bpt id="p2">*</bpt>Azure Database for PostgreSQL<ept id="p2">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Azure Database for PostgreSQL<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 Azure 入口網站中，選取左上角的 [&#65291; 建立資源]，並搜尋*適用於 PostgreSQL 的 Azure 資料庫*。 然後在生成的 [適用於 PostgreSQL 的 Azure 資料庫] 頁面中，選取 [建立]。
 
 1. 檢閱可用的適用於 PostgreSQL 的 Azure 資料庫選項，然後在[彈性伺服器] 組件中，選取 [建立]。
 
@@ -43,10 +43,10 @@ lab:
 
 1. 選取 [檢閱 + 建立]，然後選取 [建立] 以建立 Azure PostgreSQL 資料庫。
 
-1. Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
+1. 等候部署完成。 然後前往已部署的資源，應會如下所示：
 
     ![Azure 入口網站的螢幕擷取畫面，其中顯示適用於 PostgreSQL 的 Azure 資料庫頁面。](images/postgresql-portal.png)
 
-1. 檢閱管理適用於 PostreSQL 的 Azure 資料庫資源的選項。
+1. 檢閱管理適用於 PostgreSQL 的 Azure 資料庫資源的選項。
 
-> **提示**：如果您已完成探索適用於 PostreSQL 的 Azure Database，則可刪除您在此練習中建立的資源群組。
+> **提示**：如果您已完成探索適用於 PostgreSQL 的 Azure 資料庫，則可刪除您在此練習中建立的資源群組。

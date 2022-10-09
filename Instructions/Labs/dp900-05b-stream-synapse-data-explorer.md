@@ -20,7 +20,7 @@ lab:
 
 1. 在 [https://portal.azure/com](https://portal.azure.com?azure-portal=true) 開啟 Azure 入口網站，使用與 Azure 訂用帳戶相關聯的認證登入。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Ensure you are working in the directory containing your subscription - indicated at the top right under your user ID. If not, select the user icon and switch directory.
+    >                 **注意**：請確定位於您訂用帳戶所在的目錄，如右上角的使用者識別碼下方所示。 否則，請選取使用者圖示並切換目錄。
 
 1. 在 Azure 入口網站的 [首頁] 頁面上，使用 [&#65291; 建立資源] 圖示來建立新的資源。
 1. 搜尋 *Azure Synapse Analytics*，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
@@ -33,7 +33,7 @@ lab:
         - **帳戶名稱**：*建立具有唯一名稱的新帳戶，例如「datalake<your_name>」* 。
         - **檔案系統名稱**：*建立具有唯一名稱的新檔案系統，例如「fs<your_name>」* 。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: A Synapse Analytics workspace requires two resource groups in your Azure subscription; one for resources you explicitly create, and another for managed resources used by the service. It also requires a Data Lake storage account in which to store data, scripts, and other artifacts.
+    >                 **注意**：Synapse Analytics 工作區需要 Azure 訂用帳戶中的兩個資源群組：一個用於您明確建立的資源，另一個用於服務所使用的受控資源。 其還需要 Data Lake Storage 帳戶來儲存資料、指令碼和其他成品。
 
 1. 輸入這些詳細資料後，請選取 [檢閱 + 建立]，然後選取 [建立] 以建立工作區。
 1. 等候建立工作區 - 這可能需要五分鐘的時間。
@@ -72,7 +72,7 @@ lab:
     - **資料格式**：CSV
     - **忽略第一筆記錄**：已選取
     - **對應**：devices_mapping
-1. Ensure the column data types have been correctly identified as <bpt id="p1">*</bpt>Time (datetime)<ept id="p1">*</ept>, <bpt id="p2">*</bpt>Device (string)<ept id="p2">*</ept>, and <bpt id="p3">*</bpt>Value (long)<ept id="p3">*</ept>). Then select <bpt id="p1">**</bpt>Next: Start Ingestion<ept id="p1">**</ept>.
+1. 確認資料行資料類型已正確識別為 [時間 (日期時間)]、[裝置 (字串)] 和 [值 (長)]。 然後選取 [下一步：開始擷取]。
 1. 擷取完成時，請選取 [關閉]。
 1. 在 Azure Data Explorer 的 [查詢] 索引標籤上，確認已選取 **iot-data** 資料庫，然後在查詢窗格中輸入下列查詢。
 
@@ -90,13 +90,13 @@ lab:
 
     若您的結果符合此內容，表示您已順利從檔案中的資料建立**裝置**資料表。
 
-    > <bpt id="p1">**</bpt>Tip<ept id="p1">**</ept>: In this example, you imported a very small amount of batch data from a file, which is fine for the purposes of this exercise. In reality, you can use Data Explorer to analyze much larger volumes of data; and since you enabled stream ingestion, you could also have configured Data Explorer to ingest data into the table from a streaming source such as Azure Event Hubs.
+    >                 **提示**：在本範例中，您已從檔案匯入非常少量的批次資料，其非常適合本練習的用途。 實際上，您可使用資料總管來分析更大的資料量；由於您已啟用串流擷取，因此亦可設定資料總管，將資料從 Azure 事件中樞等串流來源內嵌至資料表。
 
 ## <a name="use-kusto-query-language-to-query-the-table-in-synapse-studio"></a>使用 Kusto 查詢語言來查詢 Synapse Studio 中的資料表
 
 1. 關閉 [Azure Data Explorer] 瀏覽器索引標籤，並回到包含 Synapse Studio 的索引標籤。
-1. On the <bpt id="p1">**</bpt>Data<ept id="p1">**</ept> page, expand the <bpt id="p2">**</bpt>iot-data<ept id="p2">**</ept> database and its <bpt id="p3">**</bpt>Tables<ept id="p3">**</ept> folder. Then in the <bpt id="p1">**</bpt>...<ept id="p1">**</ept> menu for the <bpt id="p2">**</bpt>devices<ept id="p2">**</ept> table, select <bpt id="p3">**</bpt>New KQL Script<ept id="p3">**</ept><ph id="ph1"> &gt; </ph><bpt id="p4">**</bpt>Take 1000 rows<ept id="p4">**</ept>.
-1. Review the generated query and its results. The query should contain the following code:
+1. 在 [資料] 頁面上，展開 **iot-data** 資料庫及其**資料表**資料夾。 然後在**裝置**資料表的 [...] 功能表中，選取 [新增 KQL 指令碼]  >  [接受 1000 個資料列]。
+1. 檢閱產生的查詢及其結果。 查詢應會包含下列程式碼：
 
     ```kusto
     devices
@@ -112,7 +112,7 @@ lab:
     | where Device == 'Dev1'
     ```
 
-1. Select <bpt id="p1">**</bpt>&amp;#9655; Run<ept id="p1">**</ept> to run the query. Then review the results, which should contain only the rows for the <bpt id="p1">*</bpt>Dev1<ept id="p1">*</ept> device.
+1. 選取 [&#9655; 執行] 執行查詢。 然後檢閱結果，其應僅包含 *Dev1* 裝置的資料列。
 
 1. 修改查詢，如下所示：
 
