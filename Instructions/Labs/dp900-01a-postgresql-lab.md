@@ -20,7 +20,7 @@ lab:
 
 1. 在 Azure 入口網站中，選取左上角的 [&#65291; 建立資源]，並搜尋*適用於 PostgreSQL 的 Azure 資料庫*。 然後在生成的 [適用於 PostgreSQL 的 Azure 資料庫] 頁面中，選取 [建立]。
 
-1. 檢閱可用的適用於 PostgreSQL 的 Azure 資料庫選項，然後在[彈性伺服器] 組件中，選取 [建立]。
+1. 檢閱適用於 PostgreSQL 的 Azure 資料庫可用的選項，再從 [適用於 PostgreSQL 的 Azure 資料庫]磚中，選取 [彈性伺服器 (建議)]，然後選取 [建立]。
 
     ![螢幕擷取畫面：適用於 PostgreSQL 的 Azure 資料庫的部署選項](images/postgresql-options.png)
 
