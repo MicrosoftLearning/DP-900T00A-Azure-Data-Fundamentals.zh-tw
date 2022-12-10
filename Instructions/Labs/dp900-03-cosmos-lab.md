@@ -9,7 +9,7 @@ lab:
 
 此實驗室需要大約 **15** 分鐘才能完成。
 
-## <a name="before-you-start"></a>開始之前
+## <a name="before-you-start"></a>在您開始使用 Intune 之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
