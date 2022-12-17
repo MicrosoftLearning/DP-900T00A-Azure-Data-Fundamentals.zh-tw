@@ -1,17 +1,10 @@
 ---
 lab:
-    title: '實驗室 03：佈建非關聯式 Azure 資料服務'
-    module: '模組 03：探索 Azure 中的非關聯式資料'
+  title: 實驗 03：佈建非關聯式 Azure 資料服務
+  module: 'Module 03: Explore non-relational data in Azure'
 ---
 
-## 指示
-在範例情境中，您已決定建立以下資料存放區：
+## <a name="instructions"></a>Instructions
+在此練習中，您會探索 Azure 儲存體可以透過哪些方式作為非關聯式資料存放區使用
 
-* 用來保留存貨品項數量資訊的 Cosmos DB。您需要儲存數量層級的目前和歷史資訊，才可以追蹤不同時間內變化的程度。系統會每天記錄這類資料。
-* 用來保留產品和品質資料的 Data Lake Store。
-* 用來保留公司產品的圖片的 Blob 容器。
-* 用來共用報告的檔案儲存體。
-
-在此實驗室中，您將佈建和設定 Cosmos DB 帳戶，並透過建立資料庫、容器和範例文件來加以測試。您也將佈建 Azure 儲存體帳戶，此帳戶可以提供 Blob、檔案和 Data Lake Storage。
-
-1.	請前往位於 https://aka.ms/dp900lab03-cht 的 Microsoft Learn 練習，並在瀏覽器中完成該單元： 
+1.  請前往位於 https://docs.microsoft.com/learn/modules/explore-provision-deploy-non-relational-data-services-azure/6-exercise-azure-storage 的 Microsoft Learn 練習，並在瀏覽器中完成該單元： 
