@@ -1,10 +1,10 @@
-# <a name="dp-900-trainer-lab-mapping"></a>DP-900 講師實驗室對應
+# DP-900 講師實驗室對應
 
 「DP-900：Microsoft Azure 資料基礎知識」這門課程有套指定用於導學型訓練的實驗。 
 
 > 注意：講師可以要求學生在課餘時間透過相關 Learn 學習路徑 (https://docs.microsoft.com/users/23110622/collections/0kjyh8rn5gdrjj) 中的練習完成一或多個實驗。 
 
-## <a name="dp-900-module-mapping-to-labs"></a>對應各實驗室的 DP-900 模組
+## 對應各實驗室的 DP-900 模組
 
 | 模組 | 實驗室 | Markdown 檔案 |
 | --- | --- | --- |

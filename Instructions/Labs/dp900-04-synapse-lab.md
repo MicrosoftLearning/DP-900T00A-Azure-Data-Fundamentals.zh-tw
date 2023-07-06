@@ -4,17 +4,17 @@ lab:
   module: Explore fundamentals of large-scale data warehousing
 ---
 
-# <a name="explore-data-analytics-in-azure-with-azure-synapse-analytics"></a>使用 Azure Synapse Analytice 探索 Azure 中的資料分析
+# 使用 Azure Synapse Analytice 探索 Azure 中的資料分析
 
 在此練習中，您必須在自己的 Azure 訂閱中佈建 Azure Synapse Analytics 工作區，用於內嵌和查詢資料。
 
 此實驗室需要大約 **30** 分鐘才能完成。
 
-## <a name="before-you-start"></a>開始之前
+## 開始之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
-## <a name="provision-an-azure-synapse-analytics-workspace"></a>佈建 Azure Synapse Analytics 工作區
+## 佈建 Azure Synapse Analytics 工作區
 
 若要使用 Azure Synapse Analytics，您必須在 Azure 訂用帳戶中佈建 Azure Synapse Analytics 工作區資源。
 
@@ -24,7 +24,7 @@ lab:
 
 2. 在 Azure 入口網站的 [首頁] 頁面上，使用 [&#65291; 建立資源] 圖示來建立新的資源。
 3. 搜尋 *Azure Synapse Analytics*，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
-    - **訂用帳戶**：您的 Azure 訂用帳戶
+    - **訂用帳戶**：Azure 訂閱
         - **資源群組**：建立具有適當名稱的新資源群組，例如 "synapse-rg"
         - **受控資源群組**：輸入適當的名稱，例如 "synapse-managed-rg"。
     - **工作區名稱**：*輸入唯一的工作區名稱，例如「synapse-ws-<your_name>」* 。
@@ -53,7 +53,7 @@ lab:
 
     ![影像顯示展開的 Synapse Studio 功能表，能管理資源和執行資料分析工作](images/synapse-studio.png)
 
-## <a name="ingest-data"></a>擷取資料
+## 擷取資料
 
 Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，用以從各種來源將資料轉送 (必要時還轉換) 至工作區來分析。
 
@@ -61,7 +61,7 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，�
 2. 在複製資料工具的 [屬性] 步驟中，確定已選取 [內建複製工作] 和 [立即執行一次]，然後按 [下一步 >]。
 3. 在 [來源] 步驟的 [資料集] 子步驟中，選取下列設定：
     - **來源類型**：全部
-    - **連線**：建立新連線，並在出現的 [新增連線] 窗格中選取 [檔案] 索引標籤上的 [HTTP]。接著使用下列設定繼續進行，並建立資料檔案的連線：
+    - **連線**： *建立新的連線，然後在出現的 [ **新增連線** ] 窗格中，選取 [ **一般通訊協定** ] 索引標籤上的 **[HTTP**]。然後，使用下列設定繼續並建立資料檔案的連接：*
         - **名稱**：AdventureWorks 產品
         - **描述**：透過 HTTP 的產品清單
         - **透過整合執行階段連線**：AutoResolveIntegrationRuntime
@@ -112,7 +112,7 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，�
 
     ![影像顯示 Synapse Studio 展開的 Azure Data Lake Storage Gen 2 階層，以及 Synapse 工作區的檔案儲存體](images/synapse-storage.png)
 
-## <a name="use-a-sql-pool-to-analyze-data"></a>使用 SQL 集區分析資料
+## 使用 SQL 集區分析資料
 
 將一些資料內嵌到工作區後，您即可使用 Synapse Analytics 來查詢與分析資料。 查詢資料的最常見方式之一是使用 SQL，而且在 Synapse Analytics 中，您可以使用「SQL 集區」來執行 SQL 程式碼。
 
@@ -210,7 +210,7 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，�
 
     ![影像顯示產品計數圖表檢視](images/column-chart.png)
 
-## <a name="use-a-spark-pool-to-analyze-data"></a>使用 Spark 集區來分析資料
+## 使用 Spark 集區來分析資料
 
 雖然 SQL 是查詢結構化資料集的常用語言，但許多資料分析師發現 Python 之類的語言也很適合探索和準備要分析的資料。 在 Azure Synapse Analytics 中，您可以在「Spark 集區」中執行 Python (和其他) 程式碼，此集區使用以 Apache Spark 為基礎的分散式資料處理引擎。
 
@@ -291,7 +291,7 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」，�
 
 15. 關閉 [Notebook 1] (筆記本 1) 窗格並捨棄變更。
 
-## <a name="delete-azure-resources"></a>刪除 Azure 資源
+## 刪除 Azure 資源
 
 完成探索 Azure Synapse Analytics 後，建議刪除您建立的資源，以免產生不必要的 Azure 成本。
 
