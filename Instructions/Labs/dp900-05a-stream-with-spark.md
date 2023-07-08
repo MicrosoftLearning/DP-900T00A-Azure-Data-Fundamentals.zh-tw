@@ -4,17 +4,17 @@ lab:
   module: Explore fundamentals of real-time analytics
 ---
 
-# <a name="explore-spark-streaming-in-azure-synapse-analytics"></a>探索 Azure Synapse Analytics 中的 Spark 串流
+# 探索 Azure Synapse Analytics 中的 Spark 串流
 
 在此練習中，您將使用 Azure Synapse Analytics 中的 *Spark 結構化串流*和*差異資料表*來處理串流資料。
 
 此實驗室需要大約 **15** 分鐘才能完成。
 
-## <a name="before-you-start"></a>在您開始使用 Intune 之前
+## 在您開始使用 Intune 之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
-## <a name="provision-a-synapse-analytics-workspace"></a>佈建 Synapse Analytics 工作區
+## 佈建 Synapse Analytics 工作區
 
 若要使用 Synapse Analytics，您必須在 Azure 訂用帳戶中佈建 Synapse Analytics 工作區資源。
 
@@ -24,7 +24,7 @@ lab:
 
 2. 在 Azure 入口網站的 [首頁] 頁面上，使用 [&#65291; 建立資源] 圖示來建立新的資源。
 3. 搜尋 *Azure Synapse Analytics*，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
-    - **訂用帳戶**：您的 Azure 訂用帳戶
+    - **訂用帳戶**：Azure 訂閱
         - **資源群組**：建立具有適當名稱的新資源群組，例如 "synapse-rg"
         - **受控資源群組**：輸入適當的名稱，例如 "synapse-managed-rg"。
     - **工作區名稱**：*輸入唯一的工作區名稱，例如「synapse-ws-<your_name>」* 。
@@ -43,7 +43,7 @@ lab:
 
     ![Synapse Studio](images/synapse-studio.png)
 
-## <a name="create-a-spark-pool"></a>建立 Spark 集區
+## 建立 Spark 集區
 
 若要使用 Spark 來處理串流資料，您必須將 Spark 集區新增至 Azure Synapse 工作區。
 
@@ -56,7 +56,7 @@ lab:
     - **節點數目** 3----3
 3. 檢閱並建立 Spark 集區，然後等候部署完成 (這可能需要幾分鐘)。
 
-## <a name="explore-stream-processing"></a>探索串流處理
+## 探索串流處理
 
 若要使用 Spark 探索串流處理，您將使用包含 Python 程式碼和筆記的筆記本，協助您使用 Spark 結構化串流和差異資料表執行一些基本串流處理。
 
@@ -65,7 +65,7 @@ lab:
 3. 在 [&#65291;] 功能表上，選取 [&#8612; 匯入]，然後選取本地電腦上的 **Structured Streaming and Delta Tables.ipynb** 檔案。
 4. 依照筆記本中的指示將其附加至 Spark 集區，並執行其所包含的程式碼資料格，以探索使用 Spark 進行串流處理的各種方式。
 
-## <a name="delete-azure-resources"></a>刪除 Azure 資源
+## 刪除 Azure 資源
 
 >                 **注意**：如果您想要完成使用 Azure Synapse Analytics 的其他練習，您可以略過本節。 否則，請遵循下列步驟來避免不必要的 Azure 成本。
 

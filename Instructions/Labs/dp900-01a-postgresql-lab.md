@@ -4,17 +4,17 @@ lab:
   module: Explore relational data in Azure
 ---
 
-# <a name="explore-azure-database-for-postgresql"></a>探索適用於 PostgreSQL 的 Azure 資料庫
+# 探索適用於 PostgreSQL 的 Azure 資料庫
 
 在此練習中，需在您的 Azure 訂用帳戶中佈建適用於 PostgreSQL 資源的 Azure 資料庫。
 
 此實驗室需要大約 **5** 分鐘才能完成。
 
-## <a name="before-you-start"></a>開始之前
+## 開始之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
-## <a name="provision-an-azure-database-for-postgresql-resource"></a>佈建適用於 PostgreSQL 的 Azure 資料庫資源
+## 佈建適用於 PostgreSQL 的 Azure 資料庫資源
 
 在此練習中，需佈建適用於 PostgreSQL 資源的 Azure 資料庫。
 

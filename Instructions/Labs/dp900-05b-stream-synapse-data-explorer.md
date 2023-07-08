@@ -4,17 +4,19 @@ lab:
   module: Explore fundamentals of real-time analytics
 ---
 
-# <a name="explore-azure-synapse-data-explorer"></a>探索 Azure Synapse 資料總管
+# 探索 Azure Synapse 資料總管
+
+> **注意**：由於產品變更，此實驗室的 **建立資料庫和內嵌資料** 區段有一些已知問題。 我們正努力解決這些問題。
 
 在本練習中，您將使用 Azure Synapse Data Explorer 分析時間序列資料。
 
 此實驗室需要大約 **25** 分鐘才能完成。
 
-## <a name="before-you-start"></a>在您開始使用 Intune 之前
+## 在您開始使用 Intune 之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
-## <a name="provision-a-synapse-analytics-workspace"></a>佈建 Synapse Analytics 工作區
+## 佈建 Synapse Analytics 工作區
 
 > **提示**：若您已具有來自上個練習的 Azure Synapse 工作區，請跳過本節並直接移至 **[建立資料總管集區](#create-a-data-explorer-pool)** 。
 
@@ -24,7 +26,7 @@ lab:
 
 1. 在 Azure 入口網站的 [首頁] 頁面上，使用 [&#65291; 建立資源] 圖示來建立新的資源。
 1. 搜尋 *Azure Synapse Analytics*，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
-    - **訂用帳戶**：您的 Azure 訂用帳戶
+    - **訂用帳戶**：Azure 訂閱
         - **資源群組**：建立具有適當名稱的新資源群組，例如 "synapse-rg"
         - **受控資源群組**：輸入適當的名稱，例如 "synapse-managed-rg"。
     - **工作區名稱**：*輸入唯一的工作區名稱，例如「synapse-ws-<your_name>」* 。
@@ -39,9 +41,9 @@ lab:
 1. 等候建立工作區 - 這可能需要五分鐘的時間。
 1. 部署完成後，請移至已建立的資源群組，並注意到其包含您的 Synapse Analytics 工作區和 Data Lake Storage 帳戶。
 1. 選取 Synapse 工作區，然後在其 [概觀] 頁面的 [開啟 Synapse Studio] 卡片中，選取 [開啟] 以在新瀏覽器索引標籤中開啟 Synapse Studio。Synapse Studio 是一種 Web 介面，可讓您用來處理 Synapse Analytics 工作區。
-1. 在 Synapse Studio 左側，使用 **&rsaquo;&rsaquo;** 圖示展開功能表，這會顯示 Synapse Studio 中的不同頁面，您將使用這些頁面來管理資源和執行資料分析工作
+1. 在Synapse Studio左側，使用 **&rsaquo;&rsaquo;** 圖示展開功能表 - 這會顯示您將用來管理資源和執行資料分析工作之Synapse Studio內的不同頁面。
 
-## <a name="create-a-data-explorer-pool"></a>建立資料總管集區
+## 建立資料總管集區
 
 1. 在 Synapse Studio 中，選取 [管理] 頁面。
 1. 選取 [資料總管集區] 索引標籤，然後使用 **&#65291; 新增**圖示建立具有下列設定的新集區：
@@ -51,7 +53,7 @@ lab:
 1. 選取 [下一步：其他設定 >]，並啟用 [串流擷取] 設定 - 這可讓資料總管從串流來源擷取新的資料，例如 Azure 事件中樞。
 1. 選取 [檢閱並建立] 以建立資料總管集區，然後等候部署該集區 (可能需要 15 分鐘或更長的時間 -狀態會從 [建立] 變更為 [線上])。
 
-## <a name="create-a-database-and-ingest-data"></a>建立資料庫並擷取資料
+## 建立資料庫並擷取資料
 
 1. 在 Synapse Studio 中，選取 [資料] 頁面。
 1. 確認選取 [工作區] 索引標籤，並視需要選取頁面左上方的 **&#8635;** 圖示重新整理檢視，以列出**資料總管資料庫**。
@@ -92,7 +94,7 @@ lab:
 
     >                 **提示**：在本範例中，您已從檔案匯入非常少量的批次資料，其非常適合本練習的用途。 實際上，您可使用資料總管來分析更大的資料量；由於您已啟用串流擷取，因此亦可設定資料總管，將資料從 Azure 事件中樞等串流來源內嵌至資料表。
 
-## <a name="use-kusto-query-language-to-query-the-table-in-synapse-studio"></a>使用 Kusto 查詢語言來查詢 Synapse Studio 中的資料表
+## 使用 Kusto 查詢語言來查詢 Synapse Studio 中的資料表
 
 1. 關閉 [Azure Data Explorer] 瀏覽器索引標籤，並回到包含 Synapse Studio 的索引標籤。
 1. 在 [資料] 頁面上，展開 **iot-data** 資料庫及其**資料表**資料夾。 然後在**裝置**資料表的 [...] 功能表中，選取 [新增 KQL 指令碼]  >  [接受 1000 個資料列]。
@@ -137,7 +139,7 @@ lab:
 
 1. 關閉 [KQL查詢] 索引標籤，捨棄您的變更。
 
-## <a name="delete-azure-resources"></a>刪除 Azure 資源
+## 刪除 Azure 資源
 
 完成探索 Azure Synapse Analytics 後，您應刪除已建立的資源，以避免不必要的 Azure 成本。
 
