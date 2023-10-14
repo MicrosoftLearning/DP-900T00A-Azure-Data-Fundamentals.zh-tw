@@ -4,17 +4,17 @@ lab:
   module: Explore fundamentals of real-time analytics
 ---
 
-# <a name="explore-azure-stream-analytics"></a>探索 Azure 串流分析
+# 探索 Azure 串流分析
 
 在此練習中，您必須在自己的 Azure 訂閱中佈建 Azure 串流分析作業，用於處理即時資料流。
 
 此實驗室需要大約 **15** 分鐘才能完成。
 
-## <a name="before-you-start"></a>在您開始使用 Intune 之前
+## 開始之前
 
 您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
 
-## <a name="create-azure-resources"></a>建立 Azure 資源
+## 建立 Azure 資源
 
 1. 前往 [Azure 入口網站](https://portal.azure.com)，使用您的 Azure 訂閱登入資訊來登入帳戶。
 
@@ -40,6 +40,8 @@ lab:
     bash setup.sh
     ```
 
+    > 忽略未來變更和實驗性功能的任何警告訊息。
+
     等候指令碼執行並執行下列動作：
 
     1. 安裝要建立資源所需的 Azure CLI 擴充功能 (*您可以忽略實驗性擴充功能的任何警告*)
@@ -48,7 +50,7 @@ lab:
     1. 建立 *Azure 儲存體帳戶*，以供用來儲存已處理的資料。
     1. 建立 *Azure 串流分析*作業，以即時處理傳入的裝置資料，並將結果寫入到儲存體帳戶。
 
-## <a name="explore-the-azure-resources"></a>探索 Azure 資源
+## 探索 Azure 資源
 
 1. 在 [Azure 入口網站](https://portal.azure.com?azure-portal=true)的首頁上，選取 [資源群組] 以查看您訂用帳戶中的資源群組。 這應該包含安裝指令碼所識別的 **learn*xxxxxxxxxxxxxxxxx...** * 資源群組。
 2. 選取 **learn*xxxxxxxxxxxxxxxxx...** * 資源群組，並檢閱其包含的資源，其中應該包括：
@@ -58,11 +60,11 @@ lab:
 
     如果這三個資源均未列出，請按一下 [&#8635; 重新整理] 按鈕，直到這三個資源出現為止。
 
- 3. 選取 **stream*xxxxxxxxxxxxx*** 串流分析作業，並檢視其 [概觀] 頁面上的資訊，並記下下列詳細資料：
+3. 選取 **stream*xxxxxxxxxxxxx*** 串流分析作業，並檢視其 [概觀] 頁面上的資訊，並記下下列詳細資料：
     - 作業中會有一個名為 **iotinput** 的*輸入*，以及一個名為 **bloboutput** 的*輸出*。 這些資料會參考安裝指令碼所建立的 IoT 中樞和儲存體帳戶。
     - 作業具有*查詢*，其會從 **iotinput** 輸入讀取資料，並藉由計算每 10 秒所處理的訊息數目來加以彙總；將結果寫入到 **bloboutput** 輸出。
 
-## <a name="use-the-resources-to-analyze-streaming-data"></a>使用資源來分析串流資料
+## 使用資源來分析串流資料
 
 1. 在串流分析作業的 [概觀] 頁面頂端，選取 [&#9655; 啟動] 按鈕，然後在 [啟動作業] 窗格中，選取 [啟動] 以啟動作業。
 2. 等候串流作業已成功啟動的通知。
