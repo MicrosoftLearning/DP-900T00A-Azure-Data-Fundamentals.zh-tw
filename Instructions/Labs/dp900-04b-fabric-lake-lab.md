@@ -84,9 +84,9 @@ lab:
 
 現在您已擷取資料至 Lakehouse 的資料表，您可利用 SQL 來查詢。
 
-1. 在 Lakehouse 頁面右上方，切換至 Lakehouse 的 [SQL 端點]****。
+1. 在 Lakehouse 頁面右上方，切換至 **Lakehouse 的 SQL 分析端點** 。
 
-    ![螢幕擷取畫面：SQL 端點功能表。](./images/endpoint-switcher.png)
+    ![SQL 分析端點功能表的螢幕快照。](./images/endpoint-switcher.png)
 
 1. 在工具列，選取 [新增 SQL 查詢]****。 然後，輸入以下 SQL 程式碼至查詢編輯器。
 
@@ -102,7 +102,7 @@ lab:
 
 ## 視覺化 Lakehouse 的資料
 
-Microsoft Fabric Lakehouses 會組織資料模型的所有資料表，您可利用這些資料模型來建立視覺效果與報表。
+Microsoft Fabric Lakehouses 會組織語意數據模型中的所有數據表，您可以使用此模型來建立視覺效果和報表。
 
 1. 在頁面左下方的 [總管]**** 窗格底下，選取 [模型]**** 索引標籤並查看 Lakehouse 資料表的資料模型 (在此案例只有單一資料表)。
 
