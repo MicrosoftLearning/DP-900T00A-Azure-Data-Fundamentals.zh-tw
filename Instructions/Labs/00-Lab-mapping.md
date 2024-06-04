@@ -13,4 +13,4 @@
 | 03-探索 Azure 中的非關聯式資料| 探索 Azure Cosmos DB  | [dp900-03-cosmos-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-03-cosmos-lab.md) |
 | 04-探索 Azure 中的資料分析 | 探索 Microsoft Fabric | [dp900-04b-fabric-lake-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-04b-fabric-lake-lab.md) |
 | 04-探索 Azure 中的資料分析 | 探索 Microsoft Fabric 的即時分析 | [dp900-05c-fabric-realtime-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-05c-fabric-realtime-lab.md) |
-| 04-探索 Azure 中的資料分析 | 使用 Power BI 視覺化資料 | [dp900-pbi-06-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-pbi-06-lab.md) |
+| 04-探索 Azure 中的資料分析 | 使用 Power BI 將資料視覺化 | [dp900-pbi-06-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-pbi-06-lab.md) |
