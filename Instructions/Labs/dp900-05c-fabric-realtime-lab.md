@@ -1,99 +1,123 @@
 ---
 lab:
   title: 探索 Microsoft Fabric 的即時分析
-  module: Explore fundamentals of large-scale data analytics
+  module: Explore real-time analytics in Microsoft Fabric
 ---
 
 # 探索 Microsoft Fabric 的即時分析
 
-您將透過此練習探索 Microsoft Fabric 的即時分析。
+Microsoft Fabric 提供即時智慧，可讓您建立實時數據流的分析解決方案。 在此練習中，您將使用 Microsoft Fabric 中的即時智慧功能，從計程車公司內嵌、分析及可視化即時數據流。
 
-此實驗室需要大約 **25** 分鐘才能完成。
+此實驗室需要大約 **30** 分鐘才能完成。
 
-> **注意**：您需要 Microsoft Fabric 授權才能完成此練習。 如需如何啟用免費 Fabric 試用版授權的詳細資訊，請參閱[開始使用 Fabric](https://learn.microsoft.com/fabric/get-started/fabric-trial)。 您需要 Microsoft *學校*或*公司*帳戶才能執行此動作。 如您尚未擁有，您可[註冊 Microsoft Office 365 E3 或更高版本的試用版](https://www.microsoft.com/microsoft-365/business/compare-more-office-365-for-business-plans)。
+> **注意**：您需要Microsoft [Fabric 租使用者](https://learn.microsoft.com/fabric/get-started/fabric-trial) 才能完成此練習。
 
 ## 建立工作區
 
-在運用 Fabric 的資料之前，請先啟用 Fabric 試用版並建立工作區。
+使用 Fabric 中的數據之前，您必須建立已啟用 Fabric 容量的工作區。
 
-1. 您可在 `https://app.fabric.microsoft.com` 登入 [Microsoft Fabric](https://app.fabric.microsoft.com)。
-2. 在左側功能表列，選取 [工作區]**** (圖示看起來類似 )。
-3. 以您選擇的名稱建立新工作區，在 [進階]**** 區段選取包含 Fabric 容量 (*試用版*、*進階版*或 *Fabric*) 的授權模式。
-4. 當新工作區開啟時，應為空白。
+1. 瀏覽至[瀏覽器中的 Microsoft Fabric 首頁](https://app.fabric.microsoft.com/home?experience=fabric)`https://app.fabric.microsoft.com/home?experience=fabric`，並使用您的 Fabric 認證登入。
+1. 在左側功能表列，選取 [工作區]**** (圖示看起來類似 )。
+1. 使用您選擇的名稱建立新的工作區，選取包含網狀架構容量的授權模式（*試用版*、 *進階*或 *網狀架構*）。
+1. 當新工作區開啟時，應為空白。
 
-    ![螢幕擷取畫面：Power BI 空白工作區。](./images/new-workspace.png)
-
-## 建立 KQL 資料庫
-
-現在您已擁有工作區，您可建立 KQL 資料庫來儲存即時資料。
-
-1. 在入口網站左下方，切換至 [即時智慧]**** 體驗。
-
-    ![螢幕擷取畫面：體驗切換器功能表。](./images/fabric-real-time.png)
-
-    [即時智慧] 首頁包含用來建立常用資產以進行即時資料分析的圖格。
-
-2. 在 [即時智慧] 首頁中，使用您選擇的名稱建立新的 **Eventhouse**。
-
-    ![RTA 編輯器的螢幕擷取畫面，其中已醒目提示 [建立 KQL DB]。](./images/create-kql-db.png)
-
-    Eventhouse 用來跨專案分組和管理您的資料庫。 系統會使用 Eventhouse 的名稱自動建立空的 KQL 資料庫，而且我們稍後將在本練習中將資料新增至其中。
+    ![Fabric 中空白工作區的螢幕快照。](./images/new-workspace.png)
 
 ## 建立 Eventstream
 
-Eventstreams 提供可調整且彈性的方式，從串流來源擷取即時資料。
+現在您已準備好從串流來源尋找和內嵌實時數據。 若要這樣做，您將從網狀架構實時中樞開始。
 
-1. 在左側功能表列中，選取即時智慧體驗的 [首頁]**** 頁面。
-1. 在首頁，選取圖格並以您選擇的名稱建立新 **Eventstream**。
+> **提示**：第一次使用即時中樞時，可能會顯示一些 *入門* 提示。 您可以關閉這些專案。
 
-    在短時間內，會顯示 Eventstream 的視覺化設計工具。
+1. 在左側功能表欄中，選取 **[即時** ] 中樞。
 
-    ![螢幕擷取畫面：Eventstream 設計工具。](./images/eventstream-designer.png)
+    即時中樞可讓您輕鬆尋找及管理串流數據的來源。
 
-    視覺化設計工具畫布會顯示連線 Eventstream 的來源，而 Eventstream 接著會連線目的地。
+    ![網狀架構中即時中樞的螢幕快照。](./images/real-time-hub.png)
 
-1. 在設計工具畫布，於來源的 [新來源]**** 清單，選取 [範例資料]****。 然後在 [範例資料]**** 窗格，指定名稱 [計程車]****，然後選取 [黃色計程車]**** 範例資料 (代表從計程車車程收集的資料)。 然後選取 [新增]。
-1. 在設計工具畫布下方，選取 [資料預覽]**** 索引標籤，預覽從來源串流的資料：
+1. 在即時中樞的 **[連線到** ] 區段中，選取 **[數據源**]。
+1. 尋找黃色 **計程車** 範例數據源，然後選取 [ **聯機**]。 然後在 [連線**精靈] 中**，為來源`taxi`命名並編輯預設事件數據流名稱，將其變更為 `taxi-data`。 與此數據相關聯的默認數據流會自動命名 *為 taxi-data-stream*：
 
-    ![螢幕擷取畫面：Eventstream 資料預覽。](./images/eventstream-preview.png)
+    ![新事件數據流的螢幕快照。](./images/name-eventstream.png)
 
-1. 在設計工具畫布，於目的地的 [新目的地]**** 清單，選取 [KQL 資料庫]****。 然後在 [KQL 資料庫]**** 窗格，指定目的地名稱 [taxi-data]****，然後選取您的工作區與 KQL 資料庫。 選取 [目的地] 資料表下方的 [建立新項目]****，然後輸入資料表名稱 **taxi-data**。 然後選取 [新增]。
-1. 確認已完成的 Eventstream 如下所示：
+1. 選取 **[下一步** ]，並等候建立來源和事件串流，然後選取 [ **開啟事件串流**]。 Eventstream 會在設計畫布上顯示**計程車來源和 **taxi-data-stream****：
 
-    ![螢幕擷取畫面：已完成的 Eventstream。](./images/complete-eventstream.png)
+   ![Eventstream 畫布的螢幕快照。](./images/new-taxi-stream.png)
 
-## 查詢 KQL 資料庫的即時資料
+## 建立 eventhouse
 
-您的 Eventstream 會持續填入 KQL 資料庫的資料表，讓您能夠查詢即時資料。
+eventstream 會內嵌實時庫存數據，但目前不會使用它執行任何動作。 讓我們建立一個 eventhouse，我們可以將擷取的數據儲存在數據表中。
 
-1. 在左側功能表中樞，選取 KQL 資料庫 (或選取工作區，並在該處尋找 KQL 資料庫)。
-1. 在 [計程車資料]**** 資料表 (已透過 Eventstream 建立) 的 [...]**** 功能表，選取 [查詢資料表 > 過去 24 小時內擷取的記錄]****。
+1. 在左側功能表欄上，選取 [ **建立**]。 在 [*新增*] 頁面的 [即時 Inteligence *] 區段底下*，選取 **[Eventhouse**]。 為它指定您選擇的唯一名稱。
 
-    ![螢幕擷取畫面：KQL 資料庫的 [查詢資料表] 功能表。](./images/kql-query.png)
+    >**注意**：如果未將 [ **建立]** 選項釘選到提要欄，您必須先選取省略號 （**...**） 選項。
 
-1. 檢視查詢結果，應為如下所示的 KQL 查詢：
+    關閉顯示的任何提示或提示，直到您看到新的空白事件屋為止。
+
+    ![新事件屋的螢幕快照](./images/create-eventhouse.png)
+
+1. 請注意，在左側窗格中，您的 eventhouse 包含與 eventhouse 同名的 KQL 資料庫。 您可以為此資料庫中的即時數據建立數據表，或視需要建立其他資料庫。
+1. 選取資料庫，並注意有相關聯的 *查詢集*。 此檔案包含一些可用來開始查詢資料庫中數據表的 KQL 查詢範例。
+
+    不過，目前沒有數據表可查詢。 讓我們藉由將數據從 eventstream 取得到新的數據表來解決此問題。
+
+1. 在 KQL 資料庫的主頁面中，選取 [ **取得數據**]。
+1. 針對數據源，選取 **[Eventstream Existing eventstream > ******]。
+1. 在 [ **選取或建立目的地數據表** ] 窗格中，建立名為 `taxi`的新數據表。 然後在 [ **設定資料來源]** 窗格中，選取您的工作區和 **計程車數據** 事件串流，並將連線 `taxi-table`命名為 。
+
+   ![從事件數據流載入數據表的組態螢幕快照。](./images/configure-destination.png)
+
+1. 使用 [ **下一步** ] 按鈕完成步驟來檢查數據，然後完成設定。 然後關閉組態視窗，以使用庫存資料表來查看您的事件存放區。
+
+   ![具有數據表的和 eventhouse 螢幕快照。](./images/eventhouse-with-table.png)
+
+    已建立數據流與數據表之間的連線。 讓我們在 eventstream 中確認 。
+
+1. 在左側功能表欄中，選取 **[即時** 中樞]，然後檢視 [ **我的數據流]** 頁面。 在 taxi-data-stream 數據流**數據流的 **...** 功能表中，選取 [**開啟事件串流**]。**
+
+    eventstream 現在會顯示數據流的目的地：
+
+   ![具有目的地的事件串流螢幕快照。](./images/eventstream-destination.png)
+
+    > **提示**：選取設計畫布上的目的地，如果未顯示任何數據預覽，請選取 [ **重新整理**]。
+
+    在此練習中，您已建立非常簡單的事件串流，以擷取實時數據並將其載入數據表中。 在真正的孤獨中，您通常會新增轉換，以匯總時態時間範圍的數據（例如，擷取每隻股票在五分鐘內的平均價格）。
+
+    現在讓我們來探索如何查詢和分析擷取的數據。
+
+## 查詢擷取的數據
+
+Eventstream 會擷取即時計程車車資數據，並將其載入 KQL 資料庫中的數據表。 您可以查詢此資料表以查看擷取的數據。
+
+1. 在左側功能表欄中，選取您的 Eventhouse 資料庫。
+1. *選取資料庫的查詢集*。
+1. 在查詢窗格中，修改第一個範例查詢，如下所示：
 
     ```kql
-    ['taxi-data']
-    | where ingestion_time() between (now(-1d) .. now())
+    taxi
+    | take 100
     ```
 
-    結果會顯示過去 24 小時內從串流來源擷取的所有計程車記錄。
+1. 選取查詢程式代碼並加以執行，以查看資料表中的100個資料列。
 
-1. 以下列程式碼取代查詢編輯器上半部的所有 KQL 查詢程式碼：
+    ![KQL 查詢的螢幕快照。](./images/kql-stock-query.png)
+
+1. 檢閱結果，然後修改查詢以顯示每小時計程車取車次數：
 
     ```kql
-    // This query returns the number of taxi pickups per hour
-    ['taxi-data']
+    taxi
     | summarize PickupCount = count() by bin(todatetime(tpep_pickup_datetime), 1h)
     ```
 
-1. 使用 [▷ 執行]**** 按鈕來執行查詢並檢閱結果，其中顯示每小時計程車搭載次數。
+1. 反白顯示修改過的查詢，然後執行它以查看結果。
+1. 等候幾秒鐘后再執行它，指出取貨次數隨著新數據從即時串流新增至數據表而變更。
 
 ## 清除資源
 
-如您已完成探索 Microsoft Fabric 的即時分析，您可刪除為此練習建立的工作區。
+在此練習中，您已使用事件串流建立 eventhouse、內嵌實時數據、查詢 KQL 資料庫數據表中擷取的數據、建立即時儀錶板以可視化實時數據，以及使用啟動器設定警示。
 
-1. 在左側列，選取工作區圖示即可檢視其所包含的所有項目。
-2. 在工具列的 [...]**** 功能表，選取 [工作區設定]****。
-3. 在 [其他]**** 區段，選取 [移除此工作區]****。
+如果您已完成在 Fabric 中探索即時智慧，您可以刪除您為此練習建立的工作區。
+
+1. 在左側的列中，選取工作區的圖示。
+2. 在工具列中，選取 [ **工作區設定**]。
+3. 在 [ **一般]** 區段中，選取 [ **移除此工作區**]。

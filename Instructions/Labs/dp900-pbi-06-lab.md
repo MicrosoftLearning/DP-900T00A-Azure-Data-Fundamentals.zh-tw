@@ -10,11 +10,7 @@ lab:
 
 此實驗室需要大約 **20** 分鐘才能完成。
 
-## 在您開始使用 Intune 之前
-
-您將需要具有系統管理層級存取權的 [Azure 訂用帳戶](https://azure.microsoft.com/free)。
-
-### 安裝 Power BI Desktop
+## 安裝 Power BI Desktop
 
 如果 Windows 電腦上尚未安裝 Microsoft Power BI Desktop，可以免費下載安裝。
 
@@ -86,7 +82,7 @@ lab:
 
     ![螢幕擷取畫面：如何在 Power BI 中重新命名階層。](images/rename-hierarchy.png)
 
-1. 在最左側選取 [資料檢視]**** 索引標籤，然後在 [資料]**** 窗格選取 [客戶]**** 資料表。
+1. 在左側邊緣，選取 **[數據表檢視]** 索引標籤，然後在 **[數據** ] 窗格中，選取 **客戶** 數據表。
 1. 選取 [City]\(城市\)**** 資料行標頭，然後將其 [資料類別]**** 屬性設為 [城市]****：
 
     ![螢幕擷取畫面：如何在 Power BI 中設定資料類別。](images/data-category.png)
