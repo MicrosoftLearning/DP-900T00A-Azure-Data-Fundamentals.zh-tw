@@ -17,9 +17,10 @@ lab:
 
 若要使用 Cosmos DB，您必須在 Azure 訂用帳戶中佈建 Cosmos DB 帳戶。 在此練習中，您將佈建使用 Azure Cosmos DB for NoSQL 的 Cosmos DB 帳戶。
 
-1. 在 Azure 入口網站中，選取左上方的 **[+ 建立資源]**，並搜尋 *Azure Cosmos DB*。  選取結果中的 **Azure Cosmos DB**，並選取 [建立]****。
+1. 在 Azure 入口網站 中，選取**左上方的 [+ 建立資源**]，然後搜尋 `Azure Cosmos DB`。  選取結果中的 **Azure Cosmos DB**，並選取 [建立]****。
 1. 在 [Azure Cosmos DB for NoSQL]**** 磚中，選取 [建立]****。
 1. 輸入下列詳細資料，並選取 **[檢閱 + 建立]**：
+    - **工作負載類型**：學習
     - **訂用帳戶**：若您使用沙箱，請選取 *[指引訂用帳戶]*。 否則請選取您的 Azure 訂閱。
     - **資源群組**：若您使用沙箱，請選取現有的資源群組 (名稱類似 *learn-xxxx...*)。否則，請使用您選擇的名稱建立新的資源群組。
     - **帳戶名稱**：輸入唯一名稱
@@ -47,14 +48,14 @@ lab:
 1. 修改新項目的 JSON (如下所示)，接著選取 **[儲存]**。
 
     ```json
-    {
-        "name": "Road Helmet,45",
-        "id": "123456789",
-        "categoryID": "123456789",
-        "SKU": "AB-1234-56",
-        "description": "The product called \"Road Helmet,45\" ",
-        "price": 48.74
-    }
+   {
+       "name": "Road Helmet,45",
+       "id": "123456789",
+       "categoryID": "123456789",
+       "SKU": "AB-1234-56",
+       "description": "The product called \"Road Helmet,45\" ",
+       "price": 48.74
+   }
     ```
 
 1. 請注意，儲存新項目後會自動新增其他中繼資料屬性。
@@ -67,9 +68,9 @@ lab:
 1. 修改查詢，如下所示：
 
     ```sql
-    SELECT *
-    FROM c
-    WHERE CONTAINS(c.name,"Helmet")
+   SELECT *
+   FROM c
+   WHERE CONTAINS(c.name,"Helmet")
     ```
 
 1. 使用 [執行查詢]**** 按鈕來執行修訂的查詢並檢閱結果，其中包含 [名稱]**** 欄位具有「Helmet」文字的項目 JSON 實體。

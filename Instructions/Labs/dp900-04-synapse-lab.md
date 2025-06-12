@@ -23,7 +23,7 @@ lab:
     > **提示**：請確定位於您訂用帳戶所在的目錄，如右上角的使用者識別碼下方所示。 否則，請選取使用者圖示並切換目錄。
 
 2. 在 Azure 入口網站的 [首頁]**** 頁面上，使用 [&#65291; 建立資源]**** 圖示來建立新的資源。
-3. 搜尋 Azure Synapse Analytics**，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
+3. 搜尋 `Azure Synapse Analytics`，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
     - **訂用帳戶**：您的 Azure 訂用帳戶**
         - **資源群組**：建立具有適當名稱的新資源群組，例如 "synapse-rg"**
         - **受控資源群組**：輸入適當的名稱，例如 "synapse-managed-rg"**。
@@ -62,8 +62,8 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
 3. 在 [來源]**** 步驟的 [資料集]**** 子步驟中，選取下列設定：
     - **來源類型**：全部
     - **連線**：*建立新連線，並在出現的 [新增連線]**** 窗格，選取 [一般通訊協定]**** 索引標籤的 [HTTP]****。接著使用下列設定繼續進行，並建立資料檔案的連線：*
-        - **名稱**：AdventureWorks 產品
-        - **描述**：透過 HTTP 的產品清單
+        - **名稱**：`AdventureWorks Products`
+        - **描述**：`Product list via HTTP`
         - **透過整合執行階段來連線**：AutoResolveIntegrationRuntime
         - **基底 URL**：`https://raw.githubusercontent.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/master/Azure-Synapse/products.csv`
         - **伺服器憑證驗證**：啟用
@@ -120,15 +120,15 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
 2. 在開啟的 [SQL 指令碼 1]**** 窗格中，檢閱已產生的 SQL 程式碼，應該類似如下：
 
     ```SQL
-    -- This is auto-generated code
-    SELECT
-        TOP 100 *
-    FROM
-        OPENROWSET(
-            BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
-            FORMAT = 'CSV',
-            PARSER_VERSION='2.0'
-        ) AS [result]
+   -- This is auto-generated code
+   SELECT
+       TOP 100 *
+   FROM
+       OPENROWSET(
+           BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
+           FORMAT = 'CSV',
+           PARSER_VERSION='2.0'
+       ) AS [result]
     ```
 
     此程式碼從您匯入的文字檔中開啟資料列集，並擷取前 100 個資料列的資料。
@@ -146,15 +146,15 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
 5. 請注意，結果中包含 C1、C2、C3 和 C4 這四個資料行，結果中的第一個資料列包含資料欄位的名稱。 若要解決此問題，請將 HEADER_ROW = TRUE 參數新增至 OPENROWSET 函式，如下所示 (將 datalakexx** 和 fsxx** 換成您的資料湖儲存體帳戶和檔案系統的名稱)，然後重新執行查詢：
 
     ```SQL
-    SELECT
-        TOP 100 *
-    FROM
-        OPENROWSET(
-            BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
-            FORMAT = 'CSV',
-            PARSER_VERSION='2.0',
-            HEADER_ROW = TRUE
-        ) AS [result]
+   SELECT
+       TOP 100 *
+   FROM
+       OPENROWSET(
+           BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
+           FORMAT = 'CSV',
+           PARSER_VERSION='2.0',
+           HEADER_ROW = TRUE
+       ) AS [result]
     ```
 
     現在結果看起來會像這樣：
@@ -168,16 +168,16 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
 6. 如下所示修改查詢 (將 datalakexx** 和 fsxx** 換成您的資料湖儲存體帳戶和檔案系統的名稱)：
 
     ```SQL
-    SELECT
-        Category, COUNT(*) AS ProductCount
-    FROM
-        OPENROWSET(
-            BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
-            FORMAT = 'CSV',
-            PARSER_VERSION='2.0',
-            HEADER_ROW = TRUE
-        ) AS [result]
-    GROUP BY Category;
+   SELECT
+       Category, COUNT(*) AS ProductCount
+   FROM
+       OPENROWSET(
+           BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
+           FORMAT = 'CSV',
+           PARSER_VERSION='2.0',
+           HEADER_ROW = TRUE
+       ) AS [result]
+   GROUP BY Category;
     ```
 
 7. 執行修改後的查詢，傳回的結果集應該包含每個類別的產品數目，如下所示：
@@ -188,7 +188,7 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
     | Bike Racks | 1 |
     | ... | ... |
 
-8. 在 [SQL 指令碼 1]**** 的 [屬性]**** 窗格中，將 [名稱]**** 變更為**依類別計算產品數目**。 然後在工具列中，選取 [發佈]**** 以儲存指令碼。
+8. 在 SQL 文稿 1 的 [屬性] 窗格中，將 [**名稱**] 變更為 `Count Products by Category`。******** 然後在工具列中，選取 [發佈]**** 以儲存指令碼。
 
 9. 關閉 [依類別計算產品數目]**** 指令碼窗格。
 
@@ -227,15 +227,15 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
 6. 在筆記本的第一個 (且唯一) 儲存格中檢閱程式碼，看起來應該像這樣：
 
     ```Python
-    %%pyspark
-    df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
-    ## If header exists uncomment line below
-    ##, header=True
-    )
-    display(df.limit(10))
+   %%pyspark
+   df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
+   ## If header exists uncomment line below
+   ##, header=True
+   )
+   display(df.limit(10))
     ```
 
-7.  選取程式碼儲存格左邊的 **&#9655; 執行** 圖示執行程式碼，並等候結果。 第一次執行筆記本中的儲存格時會啟動 Spark 集區，因此可能需要大約一分鐘才會傳回任何結果。
+7. 選取程式碼儲存格左邊的 **&#9655; 執行** 圖示執行程式碼，並等候結果。 第一次執行筆記本中的儲存格時會啟動 Spark 集區，因此可能需要大約一分鐘才會傳回任何結果。
 
     > **注意**：如果因為 Python 核心尚無法使用而發生錯誤，請再次執行儲存格。
 
@@ -251,12 +251,12 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
 9. 取消註解 ,header=True** 行 (因為 products.csv 檔案的第一行是資料行標頭)，程式碼看起來會像這樣：
 
     ```Python
-    %%pyspark
-    df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
-    ## If header exists uncomment line below
-    , header=True
-    )
-    display(df.limit(10))
+   %%pyspark
+   df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
+   ## If header exists uncomment line below
+   , header=True
+   )
+   display(df.limit(10))
     ```
 
 10. 重新執行儲存格，並確認結果看起來像這樣：
