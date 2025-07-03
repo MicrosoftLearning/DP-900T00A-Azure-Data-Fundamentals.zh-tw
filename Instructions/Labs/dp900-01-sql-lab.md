@@ -16,7 +16,7 @@ lab:
 
 ## 佈建 Azure SQL Database 資源
 
-1. 在 [Azure 入口網站](https://portal.azure.com?azure-portal=true)中，選取左上角的 [&#65291; 建立資源]****，並搜尋 *Azure SQL*。 然後在產生的 [Azure SQL]**** 頁面中，選取 [建立]****。
+1. 在 [Azure 入口網站](https://portal.azure.com?azure-portal=true) 中，選取 **&#65291;從左上角建立資源**，並搜尋 `Azure SQL`。 然後在產生的 [Azure SQL]**** 頁面中，選取 [建立]****。
 
 1. 檢閱可用的 Azure SQL 選項，然後在 [SQL資料庫]**** 圖格中，確定已選取 [單一資料庫]****，然後選取 [建立]****。
 
@@ -25,7 +25,7 @@ lab:
 1. 在 [建立 SQL Database]**** 頁面上輸入下列值，並將所有其他屬性維持為其預設設定：
     - **訂閱**：選取您的 Azure 訂閱。
     - **資源群組**：以您選擇的名稱建立新的資源群組。
-    - [資料庫名稱]****：AdventureWorks**
+    - **資料庫名稱**：`AdventureWorks`
     - **伺服器**：選取 [新建]****，並在任何可用位置中建立具有唯一名稱的新伺服器。 使用 **SQL 驗證**，並將名稱指定為伺服器管理員登入，並設下合適複雜度的密碼 (請務必記住密碼，稍後會需要用到！)
     - [想使用 SQL 彈性集區嗎？]****：[否]**
     - **工作負載環境**：開發
@@ -46,7 +46,7 @@ lab:
 
 1. 在頁面左側的窗格中，選取 [查詢編輯器(預覽)] ****，然後使用您為伺服器指定的系統管理員登入名稱和密碼登入。
     
-    若顯示錯誤訊息且指出不允許用戶端 IP 位址，請選取訊息結尾的 [允許清單 IP…]**** 連結，允許存取並嘗試再次登入 (您先前已將電腦用戶端 IP 位址新增至防火牆規則，但查詢編輯器可能會根據網路設定從不同的位址連線。)**
+    >**注意**：如果顯示指出不允許用戶端 IP 位址的錯誤訊息，請選取 **訊息結尾的 [允許清單 IP ...** ] 連結以允許存取，並嘗試再次登入（您先前已將計算機用戶端 IP 位址新增至防火牆規則，但查詢編輯器可能會根據網路設定而從不同的位址連線。
     
     查詢編輯器看起來像這樣：
     
@@ -57,7 +57,7 @@ lab:
 1. 在 [查詢 1]**** 窗格中，輸入下列 SQL 程式碼：
 
     ```sql
-    SELECT * FROM SalesLT.Product;
+   SELECT * FROM SalesLT.Product;
     ```
 
 1. 選取查詢上方的 [&#9655; 執行]**** 執行並檢視結果，其中應該包含 **SalesLT.Product** 資料表中所有資料列的所有資料行，如下所示：
@@ -67,18 +67,18 @@ lab:
 1. 以下列程式碼取代 SELECT 陳述式，然後選取 [&#9655; 執行]**** 執行新的查詢，並檢閱結果 (其中僅包含 **ProductID**、**名稱**、**ListPrice**、**ProductCategoryID** 資料行)：
 
     ```sql
-    SELECT ProductID, Name, ListPrice, ProductCategoryID
-    FROM SalesLT.Product;
+   SELECT ProductID, Name, ListPrice, ProductCategoryID
+   FROM SalesLT.Product;
     ```
 
 1. 現在請嘗試下列查詢，該查詢會使用 JOIN 從 **SalesLT.ProductCategory** 資料表取得類別名稱：
 
     ```sql
-    SELECT p.ProductID, p.Name AS ProductName,
-            c.Name AS Category, p.ListPrice
-    FROM SalesLT.Product AS p
-    JOIN [SalesLT].[ProductCategory] AS c
-        ON p.ProductCategoryID = c.ProductCategoryID;
+   SELECT p.ProductID, p.Name AS ProductName,
+           c.Name AS Category, p.ListPrice
+   FROM SalesLT.Product AS p
+   JOIN [SalesLT].[ProductCategory] AS c
+       ON p.ProductCategoryID = c.ProductCategoryID;
     ```
 
 1. 關閉查詢編輯器窗格並捨棄編輯。
