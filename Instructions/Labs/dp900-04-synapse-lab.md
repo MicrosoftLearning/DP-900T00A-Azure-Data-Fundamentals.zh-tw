@@ -23,7 +23,7 @@ lab:
     > **提示**：請確定位於您訂用帳戶所在的目錄，如右上角的使用者識別碼下方所示。 否則，請選取使用者圖示並切換目錄。
 
 2. 在 Azure 入口網站的 [首頁]**** 頁面上，使用 [&#65291; 建立資源]**** 圖示來建立新的資源。
-3. 搜尋 `Azure Synapse Analytics`，並使用下列設定建立新的 **Azure Synapse Analytics** 資源：
+3. 搜尋 `Azure Synapse Analytics`，然後使用下列設定建立新的 **Azure Synapse Analytics** 資源：
     - **訂用帳戶**：您的 Azure 訂用帳戶**
         - **資源群組**：建立具有適當名稱的新資源群組，例如 "synapse-rg"**
         - **受控資源群組**：輸入適當的名稱，例如 "synapse-managed-rg"**。
@@ -188,7 +188,7 @@ Azure Synapse Analytics 可執行的主要工作之一是定義「管線」**，
     | Bike Racks | 1 |
     | ... | ... |
 
-8. 在 SQL 文稿 1 的 [屬性] 窗格中，將 [**名稱**] 變更為 `Count Products by Category`。******** 然後在工具列中，選取 [發佈]**** 以儲存指令碼。
+8. 在 SQL 指令碼 1 的 [屬性] **** 窗格中，將 [名稱 **] **變更為 `Count Products by Category`。**** 然後在工具列中，選取 [發佈]**** 以儲存指令碼。
 
 9. 關閉 [依類別計算產品數目]**** 指令碼窗格。
 
